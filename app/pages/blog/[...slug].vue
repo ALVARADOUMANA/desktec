@@ -19,7 +19,7 @@ useSeoMeta({
     <article>
       <img class="destacada" :src="post.image" :alt="post.title">
       <p class="meta">
-        Por {{ post.author }} · {{ new Date(post.date).toLocaleDateString('es-CR') }}
+        Por {{ post.author }} · {{ new Date(post.date).toLocaleDateString('es-CR', { timeZone: 'UTC' }) }}
         <span v-for="tag in post.tags" :key="tag" class="tag">{{ tag }}</span>
       </p>
       <ContentRenderer :value="post" />

@@ -17,7 +17,7 @@ const { data: posts } = await useAsyncData('blog-list', () => {
           <div>
             <h2>{{ post.title }}</h2>
             <p>{{ post.description }}</p>
-            <small>{{ post.author }} · {{ new Date(post.date).toLocaleDateString('es-CR') }}</small>
+            <small>{{ post.author }} · {{ new Date(post.date).toLocaleDateString('es-CR', { timeZone: 'UTC' }) }}</small>
           </div>
         </NuxtLink>
       </li>
